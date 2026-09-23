@@ -52,7 +52,8 @@ void WindowsIAP::GetAssociatedStoreProductsAsync(const Napi::CallbackInfo &info)
     Napi::HandleScope scope(env);
     Napi::Array productKinds = info[0].As<Napi::Array>();
 
-    IVector<hstring> finalProductKinds = single_threaded_vector<hstring>();
+    winrt::Windows::Foundation::Collections::IVector<winrt::hstring> finalProductKinds =
+        winrt::single_threaded_vector<winrt::hstring>();
     
     for(int i = 0; i < productKinds.Length(); i++)
     {
@@ -60,7 +61,7 @@ void WindowsIAP::GetAssociatedStoreProductsAsync(const Napi::CallbackInfo &info)
       if (v.IsString())
       {
         std::string value = (std::string)v.As<Napi::String>();
-        finalProductKinds.Append(to_hstring(value));
+        finalProductKinds.Append(winrt::to_hstring(value));
       }
     }
 
