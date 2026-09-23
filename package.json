@@ -1,19 +1,34 @@
 {
-	"main": "dist/binding.js",
-	"dependencies": {
-		"node-addon-api": "^4.0.0"
-	},
-	"scripts": {
-		"build:electron": "node-gyp build --target=13.1.4 --runtime=electron --arch=x64 --release --dist-url=https://atom.io/download/atom-shell --abi=64"
-	},
-	"gypfile": true,
 	"name": "windows-iap-wrapper",
-	"version": "1.0.0",
+	"version": "1.1.0",
 	"description": "node-addon wrapper for Windows in-app purchases using winrt::Windows::Services::Store namespace",
 	"author": "soymanuvalle",
 	"license": "ISC",
+	"main": "dist/binding.js",
+	"types": "dist/binding.d.ts",
+	"gypfile": true,
+	"engines": {
+		"node": ">=18"
+	},
+	"scripts": {
+		"install": "node scripts/install.js",
+		"build": "tsc",
+		"rebuild": "node-gyp rebuild",
+		"build:electron": "node scripts/build-electron.js"
+	},
+	"dependencies": {
+		"node-addon-api": "^8.9.2"
+	},
 	"devDependencies": {
-		"@types/node": "^16.4.10",
-		"typescript": "^4.3.5"
-	}
+		"@types/node": "^24.0.0",
+		"node-gyp": "^13.0.2",
+		"typescript": "^5.8.0"
+	},
+	"files": [
+		"binding.gyp",
+		"dist",
+		"lib",
+		"scripts",
+		"src"
+	]
 }

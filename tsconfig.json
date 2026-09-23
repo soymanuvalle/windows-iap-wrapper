@@ -1,17 +1,16 @@
 {
   "compilerOptions": {
     "declaration": true,
-    "lib": [ "esnext" ],
+    "lib": ["ES2022"],
     "module": "commonjs",
     "outDir": "./dist",
     "rootDir": "./lib",
     "strict": true,
-    "target": "es6",
-    "types": [
-      "node"
-    ],
-    "typeRoots": [
-      "node_modules/@types"
-    ]
-  }
+    "target": "ES2020",
+    "types": ["node"],
+    "typeRoots": ["node_modules/@types"],
+    "esModuleInterop": true,
+    "skipLibCheck": true
+  },
+  "include": ["lib/**/*"]
 }

@@ -8,7 +8,7 @@ interface IStoreProduct {
     };
     storeId: string;
 }
-declare type ProductKind = 'Durable' | 'Application' | 'Game' | 'Consumable' | 'UnmanagedConsumable';
+type ProductKind = 'Durable' | 'Application' | 'Game' | 'Consumable' | 'UnmanagedConsumable';
 declare class WindowsIapWrapper {
     constructor();
     initialize(hwnd: Uint8Array): boolean;
