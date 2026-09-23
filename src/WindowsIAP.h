@@ -5,11 +5,13 @@
 #include <Windows.h>
 #include "winrt/Windows.Services.Store.h"
 #include "winrt/Windows.Foundation.h"
+#include "winrt/Windows.Foundation.Collections.h"
 #include <shobjidl.h>
 #include <Shlobj.h>
 
 using namespace winrt;
 using namespace Windows::Services::Store;
+using namespace Windows::Foundation::Collections;
 
 class WindowsIAP : public Napi::ObjectWrap<WindowsIAP> {
     public:

@@ -31,8 +31,8 @@ Napi::Value WindowsIAP::Initialize(const Napi::CallbackInfo &info) {
     Napi::Env env = info.Env();
     Napi::HandleScope scope(env);
     Napi::Buffer<char *> bufferData = info[0].As<Napi::Buffer<char *>>();
-    uint32_t handle = *reinterpret_cast<uint32_t *>(bufferData.Data());
-    HWND hwnd = (HWND)handle;
+    uintptr_t handle = *reinterpret_cast<uintptr_t *>(bufferData.Data());
+    HWND hwnd = reinterpret_cast<HWND>(handle);
 
     // Initialize StoreContext
     this->m_storeContext = StoreContext::GetDefault();
@@ -52,9 +52,7 @@ void WindowsIAP::GetAssociatedStoreProductsAsync(const Napi::CallbackInfo &info)
     Napi::HandleScope scope(env);
     Napi::Array productKinds = info[0].As<Napi::Array>();
 
-    IVector<hstring> finalProductKinds {
-        single_threaded_vector<hstring>()
-    };
+    IVector<hstring> finalProductKinds = single_threaded_vector<hstring>();
     
     for(int i = 0; i < productKinds.Length(); i++)
     {

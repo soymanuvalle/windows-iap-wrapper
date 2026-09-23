@@ -22,7 +22,7 @@
           "msvs_settings": {
             "VCCLCompilerTool": {
               "ExceptionHandling": 1,
-              "AdditionalOptions": [ "/std:c++17", "/EHsc", "/await" ]
+              "AdditionalOptions": [ "/std:c++20", "/EHsc", "/await" ]
             }
           }
         }]
