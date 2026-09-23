@@ -1,9 +1,8 @@
 #pragma once
 
 #include <napi.h>
-#include <Windows.h>
-#include "winrt/Windows.Services.Store.h"
 #include <string>
+#include "winrt_store.h"
 
 using namespace winrt;
 using namespace Windows::Services::Store;

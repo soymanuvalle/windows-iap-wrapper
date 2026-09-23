@@ -55,7 +55,7 @@ void WindowsIAP::GetAssociatedStoreProductsAsync(const Napi::CallbackInfo &info)
     winrt::Windows::Foundation::Collections::IVector<winrt::hstring> finalProductKinds =
         winrt::single_threaded_vector<winrt::hstring>();
     
-    for(int i = 0; i < productKinds.Length(); i++)
+    for (uint32_t i = 0; i < productKinds.Length(); i++)
     {
       Napi::Value v = productKinds[i];
       if (v.IsString())

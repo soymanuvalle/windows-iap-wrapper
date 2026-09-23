@@ -1,9 +1,7 @@
 #pragma once
 
 #include <napi.h>
-#include <Windows.h>
-#include "winrt/Windows.Services.Store.h"
-#include "winrt/Windows.Foundation.h"
+#include "winrt_store.h"
 
 using namespace winrt;
 using namespace Windows::Services::Store;
@@ -11,7 +9,7 @@ using namespace Windows::Foundation::Collections;
 
 class GetAssociatedStoreProductsWorker : public Napi::AsyncWorker {
     public:
-        GetAssociatedStoreProductsWorker(const Napi::Function &callback, IVector<hstring> &productKinds, StoreContext context);
+        GetAssociatedStoreProductsWorker(const Napi::Function &callback, IVector<hstring> const& productKinds, StoreContext context);
 
     protected:
         virtual void Execute() override;
@@ -21,5 +19,5 @@ class GetAssociatedStoreProductsWorker : public Napi::AsyncWorker {
     private:
         StoreContext m_storeContext;
         IVector<hstring> m_productKinds;
-        IIterator<IKeyValuePair<hstring, StoreProduct>> m_result;
+        IMapView<hstring, StoreProduct> m_products;
 };

@@ -2,12 +2,7 @@
 #define WINDOWS_IAP_H
 
 #include <napi.h>
-#include <Windows.h>
-#include "winrt/Windows.Services.Store.h"
-#include "winrt/Windows.Foundation.h"
-#include "winrt/Windows.Foundation.Collections.h"
-#include <shobjidl.h>
-#include <Shlobj.h>
+#include "winrt_store.h"
 
 using namespace winrt;
 using namespace Windows::Services::Store;
