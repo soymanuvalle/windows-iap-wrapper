@@ -1,6 +1,6 @@
 {
 	"name": "windows-iap-wrapper",
-	"version": "1.1.3",
+	"version": "1.1.4",
 	"description": "node-addon wrapper for Windows in-app purchases using winrt::Windows::Services::Store namespace",
 	"author": "soymanuvalle",
 	"license": "ISC",
@@ -17,11 +17,11 @@
 		"build:electron": "node scripts/build-electron.js"
 	},
 	"dependencies": {
-		"node-addon-api": "^8.9.2"
+		"node-addon-api": "^8.9.2",
+		"node-gyp": "^13.0.2"
 	},
 	"devDependencies": {
 		"@types/node": "^24.0.0",
-		"node-gyp": "^13.0.2",
 		"typescript": "^5.8.0"
 	},
 	"files": [

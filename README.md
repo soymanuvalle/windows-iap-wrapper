@@ -9,7 +9,7 @@ Node addon wrapper for Windows in-app purchases using `winrt::Windows::Services:
 - **Visual Studio 2022 Build Tools** with **Desktop development with C++**
 - **Windows 10/11 SDK** (10.0.17763 or newer)
 
-Native compilation only runs on **Windows**. On macOS/Linux the install script skips the native build (the package is a no-op there).
+Native compilation is **Windows-only**. `npm install` does **not** compile against host Node; rebuild for Electron after install.
 
 ## Install / rebuild
 
