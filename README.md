@@ -16,7 +16,7 @@ Native compilation only runs on **Windows**. On macOS/Linux the install script s
 ```bash
 npm install
 # After installing into an Electron app, rebuild for Electron's ABI:
-npx electron-rebuild -f -w windows-iap-wrapper
+npx electron-rebuild -f --only windows-iap-wrapper
 # Or from this repo:
 npm run build:electron -- --target=19.1.9
 ```
